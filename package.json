@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test-with-coverage": "istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | codacy-coverage && rm -rf ./coverage"
+    "ci-test": "ng test --watch=false --browsers=ChromeHeadless | codacy-coverage && rm -rf ./coverage"
   },
   "private": true,
   "dependencies": {
