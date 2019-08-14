@@ -1,5 +1,5 @@
 <ul nz-menu nzMode="horizontal">
-  <li nz-menu-item class="logo">
+  <li nz-menu-item class="no-bottom-border">
     <a routerLink="/">
       <img src="assets/img/angular.png" width="50" />
     </a>
@@ -9,5 +9,13 @@
   </li>
   <li nz-menu-item style="float: right">
     <a routerLink="/signup">Sign up</a>
+  </li>
+  <li nz-menu-item style="float: right;" class="no-bottom-border">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input type="text" nz-input placeholder="input search text" />
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <i nz-icon nzType="search"></i>
+    </ng-template>
   </li>
 </ul>
