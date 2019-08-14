@@ -1,4 +1,7 @@
 # Authors' Haven - Angular
+[![Build Status](https://travis-ci.com/wangonya/ah-angular.svg?branch=master)](https://travis-ci.com/wangonya/ah-angular)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5eeefae313b24a0f95bbeac3d27b6d04)](https://www.codacy.com/app/wangonya/ah-angular?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wangonya/ah-angular&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/5eeefae313b24a0f95bbeac3d27b6d04)](https://www.codacy.com/app/wangonya/ah-angular?utm_source=github.com&utm_medium=referral&utm_content=wangonya/ah-angular&utm_campaign=Badge_Coverage)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
