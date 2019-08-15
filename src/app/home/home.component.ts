@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
     this.apiService.getArticles().subscribe((data) => {
       this.messageService.createMessage('success', 'Success');
       this.articles = data['results'];
-      console.log(this.articles);
     });
   }
 }
