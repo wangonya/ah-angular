@@ -1,5 +1,4 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import { NzResultModule } from 'ng-zorro-antd/result';
 
 import { LostComponent } from './lost.component';
 
@@ -11,7 +10,6 @@ describe('LostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ NzResultModule ],
       declarations: [ LostComponent ]
     })
     .compileComponents();

@@ -1,9 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ImgFallbackModule } from 'ngx-img-fallback';
 import { HomeComponent } from './home.component';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {NzMessageService} from 'ng-zorro-antd';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -13,8 +11,6 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       imports: [ ImgFallbackModule, HttpClientTestingModule ],
       declarations: [ HomeComponent ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-      providers: [ NzMessageService ]
     })
     .compileComponents();
   }));
@@ -25,7 +21,7 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

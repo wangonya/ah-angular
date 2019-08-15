@@ -1,10 +1,4 @@
-<nz-layout>
-  <nz-header>
-    <app-nav></app-nav>
-  </nz-header>
-  <nz-content>
-    <nz-spin [nzSpinning]="isLoading | async">
-      <router-outlet></router-outlet>
-    </nz-spin>
-  </nz-content>
-</nz-layout>
+<app-nav></app-nav>
+<div class='container'>
+  <router-outlet></router-outlet>
+</div>
