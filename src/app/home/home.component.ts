@@ -9,14 +9,12 @@ import { ApiService, MessageService } from '../_services';
 export class HomeComponent implements OnInit {
 
   articles;
-  defaultImg = 'https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png';
 
   constructor(private apiService: ApiService, private messageService: MessageService) { }
 
   ngOnInit() {
-    this.apiService.request('get', 'articles/feed/').subscribe(data => {
-      // this.messageService.createMessage('success', 'Success');
-      this.articles = data['results'];
-    });
+    this.apiService.request('get', 'articles/feed/').subscribe(
+      data => this.articles = data['results'],
+      error => console.log('Error fetching articles', error));
   }
 }
