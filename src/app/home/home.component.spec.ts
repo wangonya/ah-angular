@@ -30,26 +30,6 @@ describe('HomeComponent', () => {
     httpMock.verify();
   });
 
-  // it('should make api an request to get articles',
-  //   inject(
-  //     [HttpTestingController],
-  //     (httpMock: HttpTestingController) => {
-  //       const mockArticles = [
-  //         {title: 'Test article 1'},
-  //         {title: 'Test article 2'}
-  //       ];
-  //
-  //       const mockReq = httpMock.expectOne('https://ah-django-staging.herokuapp.com/api/articles/feed/');
-  //
-  //       expect(mockReq.cancelled).toBeFalsy();
-  //       expect(mockReq.request.method).toEqual('GET');
-  //
-  //       mockReq.flush(mockArticles);
-  //
-  //       httpMock.verify();
-  //     })
-  //   );
-
   it('should make api an request to get articles', () => {
     const mockArticles = [
             {title: 'Test article 1'},
