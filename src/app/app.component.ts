@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import {Subject} from 'rxjs';
-
-import {LoaderService} from './_services';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +7,6 @@ import {LoaderService} from './_services';
 })
 export class AppComponent {
   title = 'ah-angular';
-  isLoading: Subject<boolean> = this.loaderService.isLoading;
 
-  constructor(private loaderService: LoaderService) {}
+  constructor() {}
 }
