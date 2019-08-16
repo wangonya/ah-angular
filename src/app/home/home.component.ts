@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiService, private messageService: MessageService) { }
 
   ngOnInit() {
-    this.apiService.getArticles().subscribe((data) => {
+    this.apiService.request('get', 'articles/feed/').subscribe(data => {
       // this.messageService.createMessage('success', 'Success');
       this.articles = data['results'];
     });
