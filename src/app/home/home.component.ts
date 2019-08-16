@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService, MessageService } from '../_services';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  articles;
+
+  constructor(private apiService: ApiService, private messageService: MessageService) { }
 
   ngOnInit() {
+    this.apiService.request('get', 'articles/feed/').subscribe(
+      data => this.articles = data['results'],
+      error => console.log('Error fetching articles', error));
   }
-
 }
