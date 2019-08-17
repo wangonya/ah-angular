@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiService, private messageService: MessageService) { }
 
   ngOnInit() {
-    this.apiService.request('get', 'articles/feed/').subscribe(
+    this.apiService.getRequest('articles/feed/').subscribe(
       data => this.articles = data['results'],
       error => console.log('Error fetching articles', error));
   }
