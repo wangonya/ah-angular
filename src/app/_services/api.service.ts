@@ -10,7 +10,11 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public request(type, endpoint) {
+  public getRequest(endpoint) {
     return this.httpClient.get(`${this.rootUrl}/${endpoint}`);
+  }
+
+  public postRequest(endpoint, data) {
+    return this.httpClient.post(`${this.rootUrl}/${endpoint}`, data);
   }
 }
