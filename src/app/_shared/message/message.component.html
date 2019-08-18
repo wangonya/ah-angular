@@ -1,0 +1,4 @@
+<p
+  [ngClass]="(message | async)?.type == 'error' ? 'error' : 'success'">
+  {{(message | async)?.message}}
+</p>
