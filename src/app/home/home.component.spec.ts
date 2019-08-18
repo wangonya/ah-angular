@@ -44,7 +44,7 @@ describe('HomeComponent', () => {
 
   it('should catch errors and console.log() if any', () => {
     console.log = jasmine.createSpy('log');
-    mockReq.error(new ErrorEvent('fail'), {status: 404});
+    mockReq.error(new ErrorEvent('fail'));
     expect(console.log).toHaveBeenCalled();
   });
 });
