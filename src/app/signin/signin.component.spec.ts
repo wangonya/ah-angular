@@ -8,6 +8,7 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import {By} from '@angular/platform-browser';
 import {RouterTestingModule} from '@angular/router/testing';
 import {MessageService} from '../_services';
+import {HomeComponent} from '../home/home.component';
 
 describe('SigninComponent', () => {
   let component: SigninComponent;
@@ -20,8 +21,10 @@ describe('SigninComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule, HttpClientTestingModule, RouterTestingModule.withRoutes([]), ],
-      declarations: [ SigninComponent ],
+      imports: [ FormsModule, HttpClientTestingModule, RouterTestingModule.withRoutes([
+        { path: 'home', component: HomeComponent }
+      ]), ],
+      declarations: [ SigninComponent, HomeComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     })
     .compileComponents();

@@ -16,6 +16,9 @@ export class SigninComponent implements OnInit {
               private messageService: MessageService) { }
 
   ngOnInit() {
+    if (localStorage.getItem('token')) {
+      this.router.navigate(['/home']);
+    }
   }
 
   onLogin() {

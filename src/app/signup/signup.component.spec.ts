@@ -8,6 +8,7 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import {By} from '@angular/platform-browser';
 import {RouterTestingModule} from '@angular/router/testing';
 import {MessageService} from '../_services';
+import {HomeComponent} from '../home/home.component';
 
 describe('SignupComponent', () => {
   let component: SignupComponent;
@@ -20,8 +21,10 @@ describe('SignupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule, HttpClientTestingModule, RouterTestingModule.withRoutes([]), ],
-      declarations: [ SignupComponent ],
+      imports: [ FormsModule, HttpClientTestingModule, RouterTestingModule.withRoutes([
+        { path: 'home', component: HomeComponent }
+      ]), ],
+      declarations: [ SignupComponent, HomeComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     })
     .compileComponents();
@@ -62,5 +65,15 @@ describe('SignupComponent', () => {
     expect(mockReq.request.method).toEqual('POST');
 
     mockReq.flush(response);
+  }));
+
+  it('should pass errors to messageService', async(() => {
+    const errorResponse = { errors: {error: ['test error']} };
+    const messageServiceSpy = spyOn(messageService, 'showMessage')
+      .withArgs('error', 'Sign up failed: test error').and.callThrough();
+    fixture.debugElement.query(By.css('form')).triggerEventHandler('ngSubmit', null);
+    mockReq = httpMock.expectOne('https://ah-django-staging.herokuapp.com/api/users');
+    mockReq.error(errorResponse);
+    expect(messageServiceSpy).toHaveBeenCalled();
   }));
 });
