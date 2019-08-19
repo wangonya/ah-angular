@@ -48,7 +48,7 @@ describe('SigninComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should make request to log in user on form submit', async(() => {
+  it('should make request to log in user on form submit', () => {
     const response = {
       user: {
         token: 'test-token'
@@ -65,7 +65,7 @@ describe('SigninComponent', () => {
     expect(mockReq.request.method).toEqual('POST');
 
     mockReq.flush(response);
-  }));
+  });
 
   it('should pass errors to messageService', async(() => {
     const messageServiceSpy = spyOn(messageService, 'showMessage')

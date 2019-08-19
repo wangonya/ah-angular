@@ -26,7 +26,10 @@ export class SigninComponent implements OnInit {
       data => {
         // @ts-ignore
         localStorage.setItem('token', data.user.token);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home'])
+          .then(() => {
+            window.location.reload();
+          });
       },
       error => {
         this.messageService.showMessage(
