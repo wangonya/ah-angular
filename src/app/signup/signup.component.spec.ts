@@ -63,13 +63,4 @@ describe('SignupComponent', () => {
 
     mockReq.flush(response);
   }));
-
-  // it('should pass errors to messageService', async(() => {
-  //   const messageServiceSpy = spyOn(messageService, 'showMessage')
-  //     .withArgs('error', 'Log in failed. Please check your credentials and try again.').and.callThrough();
-  //   fixture.debugElement.query(By.css('form')).triggerEventHandler('ngSubmit', null);
-  //   mockReq = httpMock.expectOne('https://ah-django-staging.herokuapp.com/api/users');
-  //   mockReq.error(new ErrorEvent('fail'));
-  //   expect(messageServiceSpy).toHaveBeenCalled();
-  // }));
 });
