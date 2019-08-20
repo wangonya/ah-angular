@@ -16,6 +16,9 @@ export class SigninComponent implements OnInit {
               private messageService: MessageService) { }
 
   ngOnInit() {
+    if (localStorage.getItem('token')) {
+      this.router.navigate(['/home']);
+    }
   }
 
   onLogin() {
@@ -23,7 +26,7 @@ export class SigninComponent implements OnInit {
       data => {
         // @ts-ignore
         localStorage.setItem('token', data.user.token);
-        this.router.navigate(['/home']);
+        window.location.replace('/home');
       },
       error => {
         this.messageService.showMessage(

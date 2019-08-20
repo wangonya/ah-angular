@@ -1,1 +1,12 @@
-<p>signup works!</p>
+<form class="row" (ngSubmit)="onSignup()" ngNativeValidate>
+  <fieldset class="column column-34 column-offset-34">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" placeholder="email" id="email" name="email" [(ngModel)]="user.email" required>
+    <label for="username">Username</label>
+    <input type="text" class="form-control" placeholder="username" id="username" name="username" [(ngModel)]="user.username" required>
+    <label for="password">Password</label>
+    <input type="password" placeholder="********" id="password" name="password" [(ngModel)]="user.password" required minlength="8">
+    <input class="button button-outline" type="submit" value="Sign up">
+    <app-message></app-message>
+  </fieldset>
+</form>

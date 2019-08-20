@@ -5,11 +5,23 @@
         <img src="assets/img/angular.png" width="50" />
       </a>
     </li>
-    <li>
-      <a routerLink="/signin" class="float-right">Sign in</a>
-    </li>
-    <li>
-      <a routerLink="/signup" class="float-right">Sign up</a>
-    </li>
+    <span class="nav-right">
+      <span *ngIf="!tokenExists">
+        <li>
+          <a routerLink="/signin">Sign in</a>
+        </li>
+        <li>
+          <a routerLink="/signup">Sign up</a>
+        </li>
+      </span>
+      <span *ngIf="tokenExists">
+        <li>
+          <a (click)="logOut()">Log out</a>
+        </li>
+        <li>
+          <a routerLink="/profile">Profile</a>
+        </li>
+      </span>
+    </span>
   </ul>
 </div>

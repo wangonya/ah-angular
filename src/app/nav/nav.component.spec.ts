@@ -24,4 +24,6 @@ describe('NavComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+//  TODO: test logOut()
 });
