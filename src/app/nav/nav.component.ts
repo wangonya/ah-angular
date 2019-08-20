@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.less']
 })
 export class NavComponent implements OnInit {
+  tokenExists: string = localStorage.getItem('token');
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  logOut() {
+    localStorage.clear();
+    window.location.replace('/signin');
   }
 
 }
