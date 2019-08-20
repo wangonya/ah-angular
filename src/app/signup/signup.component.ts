@@ -26,10 +26,7 @@ export class SignupComponent implements OnInit {
       data => {
         // @ts-ignore
         localStorage.setItem('token', data.user.data.token);
-        this.router.navigate(['/home'])
-          .then(() => {
-            window.location.reload();
-          });
+        window.location.replace('/home');
       },
       error => {
         let err;
