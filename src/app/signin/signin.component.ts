@@ -26,6 +26,7 @@ export class SigninComponent implements OnInit {
       data => {
         // @ts-ignore
         localStorage.setItem('token', data.user.token);
+        localStorage.setItem('user', this.user['username']);
         window.location.replace('/home');
       },
       error => {

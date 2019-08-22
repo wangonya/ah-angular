@@ -19,6 +19,7 @@ import {LoaderService} from './_services';
 import {LoaderInterceptor} from './_interceptors/loader.interceptor';
 import { LoaderComponent } from './_shared/loader/loader.component';
 import { MessageComponent } from './_shared/message/message.component';
+import { ProfileComponent } from './profile/profile.component';
 
 registerLocaleData(en);
 
@@ -31,7 +32,8 @@ registerLocaleData(en);
     SigninComponent,
     LostComponent,
     LoaderComponent,
-    MessageComponent
+    MessageComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
