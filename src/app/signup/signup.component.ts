@@ -27,6 +27,7 @@ export class SignupComponent implements OnInit {
         // @ts-ignore
         localStorage.setItem('token', data.user.data.token);
         window.location.replace('/home');
+        localStorage.setItem('user', this.user['username']);
       },
       error => {
         let err;

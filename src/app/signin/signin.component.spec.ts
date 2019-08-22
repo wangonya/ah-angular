@@ -18,7 +18,6 @@ describe('SigninComponent', () => {
   let mockReq;
   let router: Router;
   let messageService;
-  let mockWindowObj;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
