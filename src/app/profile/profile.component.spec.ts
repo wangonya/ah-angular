@@ -9,6 +9,7 @@ describe('ProfileComponent', () => {
   let injector: TestBed;
   let httpMock: HttpTestingController;
   let mockReq;
+  localStorage.setItem('user', 'test');
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -24,7 +25,6 @@ describe('ProfileComponent', () => {
     fixture.detectChanges();
     injector = getTestBed();
     httpMock = injector.get(HttpTestingController);
-    localStorage.setItem('user', 'test');
   });
 
   it('should create', () => {
